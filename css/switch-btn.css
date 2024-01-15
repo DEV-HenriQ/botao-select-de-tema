@@ -1,0 +1,226 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root
+{
+   --bg-header-color: rgb(28, 26, 150);
+   --bg-header-hover: rgb(196, 121, 10);
+   --carret-hover: rgb(255, 255, 255);
+}
+
+.isLight
+{
+   --bg-header-color: rgb(196, 121, 10);
+   --bg-header-hover: rgb(28, 26, 150);
+   --carret-hover: rgb(255, 255, 255);
+}
+
+.isDark
+{
+   --bg-header-color: rgb(28, 26, 150);
+   --bg-header-hover: rgb(196, 121, 10);
+   --carret-hover: rgb(0, 0, 0);
+}
+
+.dark-mode{background-color: rgb(29, 26, 75);}
+.light-mode{background-color: rgb(177, 174, 15);}
+
+.switch-btn
+{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+   scale: .77;
+}
+
+.moonNstars, .sunNrays
+{
+   display: block;
+   width: 100px;
+   height: 100px;
+   padding: 10px;
+   color: #000000;
+   font: 16px "Times New Roman";
+}
+
+.canClick:hover .moonNstars, .canClick:hover .carret-down, .canClick:hover .sunNrays
+{
+   fill: var(--carret-hover);
+   transition: .8s;
+}
+/**/
+.white-fill {fill: white}
+.black-fill {fill: black}
+
+.carret-down
+{
+   width: 30px;
+   height: 30px;
+   animation: pular 4s infinite ease-in-out;
+}
+
+.stars
+{
+   animation: piscar 4s infinite;
+}
+
+.moon
+{
+   animation: balançar 4s infinite;
+}
+
+.canClick
+{
+   cursor: pointer;
+   background-color: var(--bg-header-color);
+   box-shadow: 0px 0px 20px black;
+   margin-top: 20px;
+   padding: 10px;
+   transition: .7s;
+   border-radius: 20px;
+}
+
+.canClick:hover
+{
+   background-color: var(--bg-header-hover);
+}
+
+@keyframes piscar
+{
+   0% {opacity: 1;}
+   20% {opacity: 0;}
+   25% {transform: translateY(0px); scale: .7; opacity: 1; }
+   30% {opacity: 0;}
+   50% {opacity: 1;}
+   100% {transition: ease-in-out;}
+}
+
+@keyframes balançar
+{
+   0% {transform: rotate(0deg);}
+   25% {transform: translateY(5px) rotate(-12deg); scale: .7;}
+   100%{}
+}
+
+/*remover talvez*/
+
+figure {display: flex; align-items: center;}
+
+/*remover talvez*/
+
+@keyframes rayAppear
+{
+   0% {opacity: 0; transform: translateY(0);}
+   50% {transform: translateY(20px);}
+   100% {opacity: 1; transform: translateY(0);}
+}
+
+
+@keyframes pular
+{
+   0% {transform: translateY(0);}
+   50% {transform: translateY(20px);}
+   100% {transform: translateY(0);}
+}
+ 
+
+.ray1 {animation: rayAppear 4s infinite;}
+.ray2 {animation: rayAppear 4s .5s infinite;}
+.ray3 {animation: rayAppear 4s 1s infinite;}
+.ray4 {animation: rayAppear 4s 1.5s infinite;}
+.ray5 {animation: rayAppear 4s 2s infinite;}
+.ray6 {animation: rayAppear 4s 2.5s infinite;}
+.ray7 {animation: rayAppear 4s 3s infinite;}
+.ray8 {animation: rayAppear 4s 3.5s infinite;}
+
+.sun
+{
+	animation: pular 4s infinite;
+}
+
+.options-theme
+{
+   width: 300px;
+   height: 150px;
+   background-color: var(--bg-header-color);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 2px;
+   position: absolute;
+   top: 142px;
+   left: auto;
+   right: auto;
+}
+
+.hide
+{
+   display: none;
+}
+
+.animate-on
+{
+   animation: scalingAppear .7s;
+}
+
+.animate-off
+{
+   animation: scalingDesappear .7s forwards;
+}
+
+@keyframes scalingAppear
+{
+   0%{transform: scale(0); opacity: 0;}
+   100%{transform: scale(1); opacity: 1;}
+}
+
+@keyframes scalingDesappear
+{
+   0%{transform: scale(1); opacity: 1;}
+   100%{transform: scale(0); opacity: 0;}
+}
+
+.options-theme .first-option
+{
+   width: 290px;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   column-gap: 2rem;
+   cursor: pointer;
+   background-color: white;
+}
+
+.first-option:hover
+{
+   background-color: rgb(42, 157, 165);
+}
+
+#img-dark, #img-light
+{
+   width: 50px;
+}
+
+#txt-dark, #txt-light
+{
+   font-size: 2rem;
+}
+
+.options-theme .second-option
+{
+   width: 290px;
+   height: 70px;
+   background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   column-gap: 2rem;
+   cursor: pointer;
+}
+
+.second-option:hover
+{
+   background-color: rgb(42, 157, 165);
+}
